@@ -1,0 +1,153 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Đổi nền thành màu trắng */
+    color: black; /* Thay đổi màu chữ sang đen cho dễ đọc */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #0073e6;
+    padding: 15px;
+    font-size: 24px;
+    color: white;
+}
+
+.home-button {
+    text-decoration: none;
+    color: white;
+    background-color: #ff6600;
+    padding: 10px 15px;
+    border-radius: 5px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+section {
+    margin: 20px;
+    padding: 15px;
+    background-color: #f4f4f4; /* Màu nền sáng cho section */
+    border-radius: 8px;
+}
+
+#array {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.array-box {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    line-height: 40px;
+    background-color: #0073e6;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+pre {
+    background-color: #f4f4f4; /* Màu nền sáng cho mã giả */
+    color: #333;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+.highlight {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+}
+
+.home-link {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color: #ff5733;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.home-link:hover {
+    color: #cc4627;
+    text-decoration: underline;
+}
+/* ==== INPUT STYLING ==== */
+input[type="number"] {
+    padding: 10px 12px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    width: 120px;
+    margin: 5px;
+}
+
+input[type="number"]:focus {
+    border-color: #0073e6;
+    box-shadow: 0 0 5px rgba(0, 115, 230, 0.5);
+}
+
+/* ==== LABEL STYLING ==== */
+label {
+    font-size: 16px;
+    margin-right: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* ==== BUTTON GROUP ==== */
+.buttons {
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 18px;
+    margin: 6px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* ==== FORM GROUP FOR ADD / REMOVE ==== */
+.input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.input-group input[type="number"] {
+    width: 100px;
+}
+
+.input-group button {
+    background-color: #0073e6;
+}
+
+.input-group button:hover {
+    background-color: #005bb5;
+}

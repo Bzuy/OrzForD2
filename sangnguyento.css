@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: black;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #0073e6;
+    color: white;
+    padding: 15px;
+    font-size: 24px;
+}
+
+.home-button {
+    text-decoration: none;
+    color: white;
+    background-color: #ff6600;
+    padding: 10px 15px;
+    border-radius: 5px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+.home-link {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color: #ff5733;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.home-link:hover {
+    color: #cc4627;
+    text-decoration: underline;
+}
+
+section {
+    margin: 20px;
+    padding: 15px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+}
+
+#array {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.array-box {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    line-height: 40px;
+    background-color: #0073e6;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+pre {
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+.prime {
+    background-color: #4CAF50 !important; /* Xanh lá */
+    color: white;
+}
+
+.non-prime {
+    background-color: red !important; /* Đỏ */
+    color: white;
+}
+
+#status-text {
+    font-size: 18px;
+    font-weight: bold;
+}
+#input-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+#n-value {
+    width: 120px;
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #0073e6;
+    border-radius: 5px;
+    text-align: center;
+    outline: none;
+    transition: 0.3s;
+}
+
+#n-value:focus {
+    border-color: #ff6600;
+    box-shadow: 0 0 8px rgba(255, 102, 0, 0.5);
+}
+
+button {
+    background-color: #0073e6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: #005bb5;
+}

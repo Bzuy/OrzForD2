@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mô Phỏng Tìm Kiếm Nhị Phân</title>
+    <link rel="stylesheet" href="binary_search.css">
+</head>
+<body>
+
+    <header>
+        <h1>Tìm Kiếm Nhị Phân</h1>
+    </header>
+
+    <section id="instructions">
+        <h2>📌 Hướng Dẫn</h2>
+        <p>
+            Thuật toán tìm kiếm nhị phân chia mảng thành hai phần nhỏ hơn ở mỗi bước, 
+            cho đến khi tìm thấy phần tử hoặc xác định rằng nó không tồn tại.
+        </p>
+    </section>
+
+    <section id="array-container">
+        <h2>📊 Mảng Dữ Liệu</h2>
+        <div id="array"></div>
+
+        <!-- ✨ Thêm/xoá phần tử -->
+        <div class="array-input">
+            <input type="number" id="newValue" placeholder="Thêm số...">
+            <button onclick="addValue()">➕ Thêm</button>
+            <input type="number" id="removeValue" placeholder="Xoá số...">
+            <button onclick="removeValue()">➖ Xoá</button>
+        </div>
+
+        <label for="searchValue">🔍 Nhập số cần tìm:</label> 
+        <input type="number" id="searchValue" placeholder="Nhập số...">
+
+        <div class="buttons">
+            <button id="startSearch">🔍 Tìm Kiếm</button>
+            <button id="resetArray">🔄 Reset Mảng</button>
+        </div>
+    </section>
+
+    <section id="code-container">
+        <h2>💻 Mã Giả</h2>
+        <pre id="code">
+<code>
+1. function binarySearch(arr, x) 
+2.     left = 1, right = arr.length
+3.     while (left ≤ right)
+4.         mid = (left + right) / 2
+5.         if arr[mid] == x then return mid
+6.         else if arr[mid] < x then left = mid + 1
+7.         else right = mid - 1
+8.     return -1
+</code>
+        </pre>
+    </section>
+
+    <section id="explanation">
+        <h2>📖 Giải Thích Từng Bước</h2>
+        <p id="step">Nhấn "Tìm Kiếm" để bắt đầu!</p>
+    </section>
+
+    <a href="algorithms.html" class="home-link">🏠 Quay về</a>
+
+    <script src="binary_search.js"></script>
+
+    <footer>
+        <p>&copy; 2025 Mô Phỏng Thuật Toán</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!-- DivideandConquer -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Mô Phỏng Merge Sort</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        .instruction-box {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff3cd;
+            padding: 20px;
+            border-left: 6px solid #ffc107;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .instruction-box h2 {
+            color: #856404;
+        }
+
+        .instruction-box ul {
+            line-height: 1.7;
+            color: #333;
+            font-size: 1.05rem;
+        }
+
+        .input-section {
+            margin: 20px 0;
+        }
+
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        #visualization {
+            margin-top: 30px;
+        }
+
+        .level {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .element {
+            background-color: #ffffff;
+            border: 2px solid #4CAF50;
+            padding: 10px 15px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+            font-weight: bold;
+            min-width: 30px;
+        }
+
+        .highlight {
+            background-color: #ffdd57;
+            border-color: #ffa500;
+        }
+
+        .arrow-box {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin: 5px 0;
+            font-size: 30px;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .home-link {
+            display: block;
+            text-align: center;
+            font-size: 18px;
+            color: #ff5733;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .home-link:hover {
+            color: #cc4627;
+            text-decoration: underline;
+        }
+
+        .arrow {
+            font-size: 30px;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .arrow.left {
+            color: green;
+        }
+
+        .arrow.right {
+            color: green;
+        }
+
+        .arrow.up {
+            color: orange;
+            margin-top: 10px;
+        }
+
+        .step-description {
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: bold;
+            margin: 10px 0 20px;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .finish-message {
+            font-size: 1.2rem;
+            color: #4CAF50;
+            font-weight: bold;
+            margin-top: 20px;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        dav img {
+            border-radius: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Mô Phỏng Merge Sort - Chia để Trị</h1>
+    <img src="images/dv.png" class="dav">
+    <div class="instruction-box">
+        <h2>📘 Hướng dẫn sử dụng</h2>
+        <ul>
+            <li>Bước 1: Nhập một mảng số nguyên vào ô nhập liệu, cách nhau bởi dấu phẩy (ví dụ: <strong>10, 3, 5, 2</strong>).</li>
+            <li>Bước 2: Nhấn nút <strong>"Bắt đầu"</strong> để xem quá trình sắp xếp theo thuật toán Merge Sort (Chia để trị).</li>
+            <li>Bước 3: Thuật toán sẽ chia mảng thành các mảng con nhỏ hơn cho đến khi chỉ còn một phần tử, rồi gộp lại theo đúng thứ tự sắp xếp.</li>
+            <li>Bước 4: Mỗi lần chia mảng sẽ có mũi tên <strong>↓</strong> chỉ xuống (chia), và mỗi lần gộp mảng sẽ có mũi tên <strong>↑</strong> chỉ lên (gộp).</li>
+            <li>Bước 5: Các bước sẽ được hiển thị dưới dạng mô tả, giúp bạn dễ dàng theo dõi.</li>
+        </ul>
+    </div>
+    <div class="input-section">
+        <input type="text" id="arrayInput" placeholder="Nhập mảng, ví dụ: 8,3,7,1,4,2">
+        <button onclick="startMergeSort()">Bắt đầu</button>
+    </div>
+
+    <div id="visualization"></div>
+
+    <script>
+        function startMergeSort() {
+            const input = document.getElementById("arrayInput").value;
+            const arr = input.split(',').map(x => parseInt(x.trim())).filter(x => !isNaN(x));
+            if (arr.length === 0) {
+                alert("Vui lòng nhập mảng hợp lệ!");
+                return;
+            }
+
+            const container = document.getElementById("visualization");
+            container.innerHTML = "";
+            displayArray(arr, container, "Bắt đầu với mảng ban đầu");
+            setTimeout(() => {
+                mergeSort(arr, container);
+            }, 600);
+        }
+
+        function displayArray(arr, container, description = "", highlight = false) {
+            const desc = document.createElement("div");
+            desc.className = "step-description";
+            desc.textContent = description;
+            container.appendChild(desc);
+
+            const levelDiv = document.createElement("div");
+            levelDiv.className = "level";
+
+            arr.forEach(num => {
+                const el = document.createElement("div");
+                el.className = "element";
+                if (highlight) el.classList.add("highlight");
+                el.textContent = num;
+                levelDiv.appendChild(el);
+            });
+
+            container.appendChild(levelDiv);
+        }
+
+        function addSplitArrows(container) {
+            const arrowBox = document.createElement("div");
+            arrowBox.className = "arrow-box";
+
+            const leftArrow = document.createElement("div");
+            leftArrow.className = "arrow left";
+            leftArrow.textContent = "↓";
+
+            const rightArrow = document.createElement("div");
+            rightArrow.className = "arrow right";
+            rightArrow.textContent = "↓";
+
+            arrowBox.appendChild(leftArrow);
+            arrowBox.appendChild(rightArrow);
+            container.appendChild(arrowBox);
+        }
+
+        function addMergeArrow(container) {
+            const mergeArrow = document.createElement("div");
+            mergeArrow.className = "arrow up";
+            mergeArrow.textContent = "↑";
+            container.appendChild(mergeArrow);
+        }
+
+        function mergeSort(arr, container) {
+            if (arr.length <= 1) return arr;
+
+            const mid = Math.floor(arr.length / 2);
+            const left = arr.slice(0, mid);
+            const right = arr.slice(mid);
+
+            // Hướng dẫn chia mảng
+            displayArray(arr, container, "Bước 1: Chia mảng thành hai mảng con.");
+            addSplitArrows(container);
+            displayArray(left, container, "Mảng bên trái:");
+            displayArray(right, container, "Mảng bên phải:");
+
+            // Gọi đệ quy để sắp xếp mảng bên trái và bên phải
+            const sortedLeft = mergeSort(left, container);
+            const sortedRight = mergeSort(right, container);
+
+            // Gộp mảng lại
+            const merged = merge(sortedLeft, sortedRight);
+            addMergeArrow(container);
+            displayArray(merged, container, "Bước 2: Gộp hai mảng đã sắp xếp vào một mảng.");
+
+            // Hiển thị thông báo kết thúc
+            const finishMessage = document.createElement("div");
+            finishMessage.className = "finish-message";
+            finishMessage.textContent = "Kết thúc! Mảng đã được sắp xếp hoàn tất.";
+            container.appendChild(finishMessage);
+
+            return merged;
+        }
+
+        function merge(left, right) {
+            let result = [], i = 0, j = 0;
+            while (i < left.length && j < right.length) {
+                if (left[i] < right[j]) {
+                    result.push(left[i++]);
+                } else {
+                    result.push(right[j++]);
+                }
+            }
+            return result.concat(left.slice(i)).concat(right.slice(j));
+        }
+    </script>
+
+    <a href="algorithms.html" class="home-link">🏠 Quay về</a>
+</body>
+</html>

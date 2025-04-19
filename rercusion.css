@@ -1,0 +1,186 @@
+/* Toàn bộ body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: #4CAF50;
+    font-size: 2rem;
+}
+
+/* Phần mô tả về thuật toán */
+#description {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#description h2 {
+    color: #4CAF50;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+#description p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Phần input và nút bấm */
+#input-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#input-section input {
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 1rem;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border 0.3s ease;
+}
+
+#input-section input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+#input-section button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#input-section button:hover {
+    background-color: #45a049;
+}
+
+/* Phần kết quả */
+#result-section {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+/* Phần các bước đệ quy */
+#steps-section {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#steps-section h2 {
+    color: #4CAF50;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+#steps-section ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0;
+}
+
+#steps-section li {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#steps-section li:hover {
+    background-color: #f9f9f9;
+    transform: scale(1.02);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.home-button {
+    background-color: #ff5733;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.home-link {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color: #ff5733;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.home-link:hover {
+    color: #cc4627;
+    text-decoration: underline;
+}
+/* Hộp khối mô phỏng đệ quy */
+.rec-box {
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+}
+
+.call {
+    background-color: #e3f2fd;
+    border-left: 5px solid #2196f3;
+    color: #0d47a1;
+}
+
+.return {
+    background-color: #e8f5e9;
+    border-left: 5px solid #4caf50;
+    color: #1b5e20;
+}

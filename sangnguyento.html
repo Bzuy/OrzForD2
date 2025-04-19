@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mô phỏng Sàng Nguyên Tố</title>
+    <link rel="stylesheet" href="sangnguyento.css">
+</head>
+<body>
+
+    <header>
+        <h1>Mô phỏng Thuật Toán Sàng Nguyên Tố</h1>
+        
+    </header>
+    
+    <img src="images/khainiem-sangnguyento.jpg">
+    <main>
+        <section id="input-section">
+            <label for="n-value">Nhập số n (n > 2):</label>
+            <input type="number" id="n-value" min="2" placeholder="Nhập n">
+            <button onclick="startSimulation()">Bắt đầu</button>
+        </section>
+
+        <section id="pseudocode-section">
+            <h2>Cách thức tiến hành</h2>
+            <pre id="pseudocode"></pre>
+        </section>
+
+        <section id="array-section">
+            <h2>Danh sách số</h2>
+            <div id="array"></div>
+        </section>
+
+        <section id="status">
+            <p id="status-text"></p>
+        </section>
+    </main>
+    <a href="algorithms.html" class="home-link">🏠 Quay về</a>
+    <script src="sangnguyento.js"></script>
+    <footer>
+        <p>&copy; 2025 Mô Phỏng Thuật Toán</p>
+    </footer>
+</body>
+</html>

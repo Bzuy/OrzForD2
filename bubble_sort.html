@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mô Phỏng Sắp Xếp Nổi Bọt</title>
+    <link rel="stylesheet" href="bubble_sort.css">
+</head>
+<body>
+    <header>
+        <h1>Mô Phỏng Thuật Toán Sắp Xếp Nổi Bọt</h1>
+    </header>
+    <div id="instructions" class="instructions-box">
+        <h2>📌 Hướng Dẫn Sử Dụng Công Cụ</h2>
+        <p>Trang web này giúp bạn hiểu thuật toán Sắp Xếp Nổi Bọt thông qua mô phỏng trực quan.</p>
+        <ul>
+            <li>📌 <b>Tạo Mảng:</b> Nhấn vào nút <b>"Tạo Mảng"</b> để sinh một mảng số ngẫu nhiên.</li>
+            <li>📌 <b>Bắt Đầu Sắp Xếp:</b> Nhấn vào <b>"Bắt Đầu Sắp Xếp"</b> để xem thuật toán hoạt động.</li>
+            <li>📌 <b>Đọc Mã Giả:</b> Mỗi dòng mã giả sẽ được tô sáng khi thuật toán thực hiện.</li>
+            <li>📌 <b>Màu Sắc:</b> 
+                <ul>
+                    <li>🔴 Màu đỏ: Hai số đang được so sánh.</li>
+                    <li>🟡 Màu vàng: Dòng mã giả đang thực thi.</li>
+                    <li>🟢 Màu xanh lá: Số đã ở đúng vị trí.</li>
+                </ul>
+            </li>
+        </ul>
+        <button id="startTutorial">Tôi đã hiểu!</button>
+    </div>
+    <main>
+        <section class="visualization">
+            <div id="array-container"></div>
+            <div id="explanation">Mô tả thuật toán ở đây...</div>
+        </section>
+        <section class="controls">
+            <button id="generateArray">Tạo Mảng</button>
+            <button id="sortArray">Bắt Đầu Sắp Xếp</button>
+        </section>
+        <section class="code-display">
+            <h2>Mã Giả Thuật Toán</h2>
+            <pre id="code-display"></pre>
+        </section>
+    </main>
+    <script src="bubble_sort.js"></script>
+    <a href="algorithms.html" class="home-link">🏠 Quay về</a>
+
+    
+</body>
+</html>
